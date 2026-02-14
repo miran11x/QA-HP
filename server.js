@@ -7,17 +7,17 @@ app.use(cors());
 app.use(express.json());
 
 // Import routes
-const authRoutes = require('./routes/authRoutes');
-const usersRoutes = require('./routes/usersRoutes');
-const dashboardRoutes = require('./routes/dashboardRoutes');
-const evaluationsRoutes = require('./routes/evaluationsRoutes');
-const auditsRoutes = require('./routes/auditsRoutes');
-const reportsRoutes = require('./routes/reportsRoutes');
-const activityLogRoutes = require('./routes/activityLogRoutes');
-const queueMetricsRoutes = require('./routes/queueMetricsRoutes');
-const spotChecksRoutes = require('./routes/spotChecksRoutes');
-const vivaRoutes = require('./routes/vivaRoutes');
-const sessionsRoutes = require('./routes/sessionsRoutes');
+const authRoutes = require('./routes/authRoutes.js');
+const usersRoutes = require('./routes/usersRoutes.js');
+const dashboardRoutes = require('./routes/dashboardRoutes.js');
+const evaluationsRoutes = require('./routes/evaluationsRoutes.js');
+const auditsRoutes = require('./routes/auditsRoutes.js');
+const reportsRoutes = require('./routes/reportsRoutes.js');
+const activityLogRoutes = require('./routes/activityLogRoutes.js');
+const queueMetricsRoutes = require('./routes/queueMetricsRoutes.js');
+const spotChecksRoutes = require('./routes/spotChecksRoutes.js');
+const vivaRoutes = require('./routes/vivaRoutes.js');
+const sessionsRoutes = require('./routes/sessionsRoutes.js');
 
 // Use routes
 app.use('/api/auth', authRoutes);

